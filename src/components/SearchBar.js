@@ -2,21 +2,21 @@ import React, {useState} from 'react';
 import { Text, StyleSheet, View, TextInput } from "react-native";
 import { Feather } from '@expo/vector-icons'; 
 
-const SearchBar = () => {
+const SearchBar = ({term, onTermChange}) => {
 
 
    return (
        <View style={styles.background}>
             <Feather name="search" style={styles.iconStyle} color="black" /> 
             <TextInput style={styles.inputStyle}
-            placeholder='Search' 
+            placeholder='Search'
+            value={term}
+            onChangeText={newTerm => onTermChange(newTerm)} 
             />
            
        </View>
    );
 };
-
-      
 
 const styles = StyleSheet.create({
     background: {
@@ -39,3 +39,4 @@ const styles = StyleSheet.create({
 })
 
 export default SearchBar
+      
