@@ -11,12 +11,15 @@ const SearchBar = ({term, onTermChange}) => {
             <TextInput style={styles.inputStyle}
             placeholder='Search'
             value={term}
-            onChangeText={newTerm => onTermChange(newTerm)} 
+            onChangeText={newTerm => onTermChange(newTerm)}
+            autoCapitalize="none"
+            autoCorrect={false}
+            onEndEditing={() => console.log(`${term}`)} 
             />
-           
        </View>
    );
 };
+           
 
 const styles = StyleSheet.create({
     background: {
